@@ -22,8 +22,3 @@ subprocess.call("sudo ip link set dev " + interface + " up", shell=True)
 print("")
 print("MAC address has been changed")
 print("")
-
-subprocess.call("sudo ip link show " + interface, shell=True)
-
-print("")
-print("Script Closed")
