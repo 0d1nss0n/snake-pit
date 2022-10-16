@@ -6,7 +6,7 @@ import optparse
 
 def get_arguments():
     parser = optparse.OptionParser()
-    parser.add_option("-t", "--target IP", dest="target", help="Subnet you want to scan. Example: 10.0.0.1/24")
+    parser.add_option("-t", "--target IP", dest="target", help="Use -t to select subnet you want to scan. Example: -t 10.0.0.1/24")
     (options, arguments) = parser.parse_args()
     if not options.target:
         parser.error("[-] Please specify a subnet, use --help for more info")
