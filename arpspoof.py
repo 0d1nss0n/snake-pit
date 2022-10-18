@@ -18,8 +18,6 @@ def get_arguments():
     return options
 
 
-options = get_arguments()
-
 
 def get_mac(ip):
     arp_request = scapy.ARP(pdst=ip)
@@ -42,6 +40,8 @@ def restore(destination_ip, source_ip):
     packet = scapy.ARP(op=2, pdst=destination_ip, hwdst=destination_mac, psrc=source_ip, hwsrc=source_mac)
     scapy.send(packet, count=4, verbose=False)
 
+
+options = get_arguments()
 
 try:
     sent_packets_count = 0
